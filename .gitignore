@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log*/
+dist/
+build/
+*.log/
+
+*.env/
+.vscode/
+.vscode/launch.json/
+.vscode/settings.json/
