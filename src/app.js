@@ -29,8 +29,8 @@ app.use("/", userRouter); // Mounting user routes at /api/user
 connectDB()
   .then(() => {
     console.log("MongoDB connected successfully");
-    app.listen(3000, () => {
-      console.log("Server started on port 3000");
+    app.listen(30005, () => {
+      console.log("Server started on port 30005");
     });
   })
   .catch((err) => {
