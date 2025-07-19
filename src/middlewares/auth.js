@@ -11,7 +11,7 @@ const userAuth = async (req, res, next) => {
       return res.status(401).send("Please Login!!!")
  
     }
-    const decodedObj = await jwt.verify(token, "DEV@TINDER$790");
+    const decodedObj = await jwt.verify(token, process.env.JWT_SECRET);
     //get the userId from the decoded token
     const { _id } = decodedObj;
     //find the user in the database using the userId

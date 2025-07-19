@@ -3,6 +3,7 @@ const requestRouter = express.Router();
 const { userAuth } = require("../middlewares/auth.js");
 const ConnectionRequest = require("../model/connectionRequest.js");
 const User = require("../model/user.js");
+const sendEmail =require("../utils/sendEmail.js")
 
 //this api will call when user will logged in otherwise not
 requestRouter.post(
@@ -50,6 +51,11 @@ requestRouter.post(
       });
 
       const data = await connectionRequest.save();
+
+      const emailRes= await  sendEmail.run("a new friend request from "+ req.user.firstName , req.user.firstName +" is " + status + " in " +  toUser.firstName + toUser.lastName);
+      console.log(emailRes);
+      
+
 
       res.json({
         message: `${req.user.firstName}  is   ${status}  ${toUser.firstName} ${toUser.lastName}`,

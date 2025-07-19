@@ -4,7 +4,7 @@ dist/
 build/
 *.log/
 
-*.env/
+.env
 .vscode/
 .vscode/launch.json/
 .vscode/settings.json/
