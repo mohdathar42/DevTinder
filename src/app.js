@@ -5,6 +5,8 @@ const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
  
 const cors = require("cors");
+
+
 require('dotenv').config()
 require("./utils/cronjob.js")
 
@@ -31,8 +33,8 @@ app.use("/", userRouter); // Mounting user routes at /api/user
 connectDB()
   .then(() => {
     console.log("MongoDB connected successfully");
-    app.listen(3000, () => {
-      console.log("Server started on port 3000");
+    app.listen(process.env.PORT, () => {
+      console.log(`Server started on port ${process.env.PORT}`);
     });
   })
   .catch((err) => {
