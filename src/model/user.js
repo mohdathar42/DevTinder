@@ -46,7 +46,7 @@ const userSchema = new mongoose.Schema(
     
     about: {
       type: String,
-      default: "I am a new user",
+      default: "I am a new user on devTinder",
     },
     skills: {
       type: [String],
